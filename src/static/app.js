@@ -114,12 +114,24 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="participants-container">
           ${participantsHTML}
         </div>
+        <button class="register-btn" data-activity="${name}">Register Student</button>
       `;
       activitiesList.appendChild(activityCard);
     });
     // Add event listeners to delete buttons
     document.querySelectorAll(".delete-btn").forEach((button) => {
       button.addEventListener("click", handleUnregister);
+    });
+    // Add event listeners for register buttons
+    document.querySelectorAll(".register-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const activityName = e.target.getAttribute("data-activity");
+        if (activitySelect) {
+          activitySelect.value = activityName;
+        }
+        // Scroll to signup form
+        signupForm.scrollIntoView({ behavior: "smooth" });
+      });
     });
   }
 
