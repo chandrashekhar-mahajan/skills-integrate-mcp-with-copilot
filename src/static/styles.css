@@ -28,11 +28,36 @@ header h1 {
   margin-bottom: 10px;
 }
 
+
 main {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+}
+
+#toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#toolbar input[type="text"],
+#toolbar select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+#toolbar input[type="text"] {
+  flex: 2 1 200px;
+}
+
+#toolbar select {
+  flex: 1 1 120px;
 }
 
 @media (min-width: 768px) {
